@@ -26,7 +26,7 @@ function setText(e) {
 }
 
 function setImage(e) {
-    const url = "http://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=birthday";
+    const url = "https://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=birthday";
     fetch(url, { mode: "no-cors" }).then(console.log);
 }
 
