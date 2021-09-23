@@ -10,30 +10,28 @@
 </head>
 <body>
 
-    <form>
+    <form id="myForm">
         <label for="greeting">Greeting:</label>
-        <input type="text" id="greeting" placeholder="Write your greeting here">
-    </form>
-
-    <form>
+        <input type="text" name="greeting" id="greeting" placeholder="Write your greeting here">
+    
         <p>Please choose an event:</p>
     
-        <input type="checkbox" id="birthday">
+        <input type="checkbox" name="birthday" id="birthday">
         <label for="birthday">Birthday</label>
 
-        <input type="checkbox" id="christmas">
+        <input type="checkbox" name ="christmas" id="christmas">
         <label for="christmas">Christmas</label>
 
-        <input type="checkbox" id="anniversary">
+        <input type="checkbox" name="anniversary" id="anniversary">
         <label for="anniversary">Anniversary</label>
-    </form>
         
-    <form>
+        <p></p>
+
         <label for="message">Message:</label>
-        <input type="text" id="message" placeholder="Write your message here">
-    </form>
+        <input type="text" name="message" id="message" placeholder="Write your message here">
         
-    <form id='submitForm'>
+        <p></p>
+
         <input type="submit">
     </form>
     
