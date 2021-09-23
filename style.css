@@ -1,3 +1,13 @@
 input {
     margin: 0px 0px 40px 0px;
 }
+
+body {
+    background-color: #FFE4E1;
+    font-family: 'Montserrat', sans-serif;
+    color: #5d3954;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+}
