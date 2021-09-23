@@ -2,8 +2,7 @@ const myForm = document.querySelector('#myForm');
 
 const theBody = document.querySelector('body');
 
-myForm.addEventListener("submit", e => {
-    e.preventDefault();
+function setText(e) {
     const greetingMessage = e.target.greeting.value;
 
     const birthday = e.target.birthday.checked;
@@ -24,6 +23,24 @@ myForm.addEventListener("submit", e => {
     else {
         theBody.textContent = `${greetingMessage}. ${fullMessage}`;
     }
+}
+
+function setImage(e) {
+    const url = "http://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=birthday";
+    fetch(url, { mode: "no-cors" }).then(console.log);
+}
+
+myForm.addEventListener("submit", e => {
+    e.preventDefault();
+    setText(e);
+    setImage(e);
+    
+
+    //theBody.style.backgroundImage = "url(https://tse3.mm.bing.net/th?id=OIP.GC-l3l2nSg--IYzesm-m_QHaE7&pid=Api)";
+    //theBody.style.width =
 })
+
+
+
 
 
