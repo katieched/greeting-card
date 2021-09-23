@@ -26,18 +26,34 @@ function setText(e) {
 }
 
 function setImage(e) {
-    const url = "https://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=birthday";
-    fetch(url, { mode: "no-cors" }).then(console.log);
-}
+    let url;
+
+    const birthday = e.target.birthday.checked;
+    const christmas = e.target.christmas.checked;
+    const anniversary = e.target.anniversary.checked;
+    
+    if(birthday === true) {
+        url = "https://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=birthday"; 
+    }
+    else if(christmas === true) {
+        url = "https://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=christmas";
+    }
+    else if(anniversary === true) {
+        url = "https://api.unsplash.com/search/photos?client_id=iZH2_OrwSBNV3pq3n6cBSv37PCsoP8hm1Y3Vi80OOKM&query=anniversary";;
+    }
+
+    fetch(url).then(response => response.json()).then(response => {
+        const imageURL = response.results[Math.floor(Math.random()*response.results.length)].urls.full; //gets random image based on event
+        theBody.style.backgroundImage = `url(${imageURL})`; //changes background image
+        theBody.style.backgroundSize = "cover"; //makes background image fit screen
+        theBody.style.backgroundRepeat = "no-repeat";
+    });
+};
 
 myForm.addEventListener("submit", e => {
     e.preventDefault();
     setText(e);
     setImage(e);
-    
-
-    //theBody.style.backgroundImage = "url(https://tse3.mm.bing.net/th?id=OIP.GC-l3l2nSg--IYzesm-m_QHaE7&pid=Api)";
-    //theBody.style.width =
 })
 
 
